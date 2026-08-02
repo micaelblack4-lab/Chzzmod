@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "shopchz",
+	"version": "${version}",
+	"name": "ShopCHZ",
+	"description": "Um shop completo com todos os itens, blocos, encantamentos e drops do Minecraft 26.1.2",
+	"authors": [
+		"chz"
+	],
+	"contact": {},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.chz.shopchz.ShopCHZ"
+		],
+		"client": [
+			"com.chz.shopchz.ShopCHZClient"
+		]
+	},
+	"mixins": [
+		"shopchz.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.0",
+		"minecraft": "\~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
