@@ -17,17 +17,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '25'
-          cache: 'gradle'
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build with Gradle
-        run: ./gradlew build --no-daemon
-
-      - name: Upload JAR artifact
-        uses: actions/upload-artifact@v4
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
         with:
-          name: shopchz-jar
-          path: build/libs/*.jar
-          if-no-files-found: error
+          gradle-version: '9.5'
+
+      -
