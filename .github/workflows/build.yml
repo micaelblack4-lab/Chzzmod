@@ -23,4 +23,12 @@ jobs:
         with:
           gradle-version: '9.5'
 
-      -
+      - name: Build with Gradle
+        run: gradle build --no-daemon
+
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shopchz-jar
+          path: build/libs/*.jar
+          if-no-files-found: error
